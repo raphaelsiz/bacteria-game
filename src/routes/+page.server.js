@@ -1,3 +1,4 @@
+import { getNumber } from "$lib/timeutils";
 let guesses = [];
 let properties = ["Name","Shape","Aerobic needs","Gram"];
 export function load({ params }) {
