@@ -8,6 +8,21 @@ let properties = form?.properties || data.properties;
 let answer = data.answer || {}
 </script>
 
+<style>
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+div.container
+{
+    display: block;
+    text-align: center;
+}
+</style>
+
 <div class="container">
 <Table guesses={guesses} properties={properties}/>
 <form method="POST">
