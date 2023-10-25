@@ -35,4 +35,5 @@ export function toGuess(guess,answer) {
         else if (guess[property] == "either" || answer[property] == "either") correct = "somewhat";
         newGuess[property] = {answer: guess[property], correct}
     }
+    return newGuess
 }
