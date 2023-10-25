@@ -9,18 +9,7 @@ let answer = data.answer || {}
 </script>
 
 <div class="container">
-<div class="table">
-<table>
-<tr>
-{#each properties as property}
-<th>{property}</th>
-{/each}
-</tr>
-{#each guesses as guess}
-<Guess guess={guess} properties={properties}/>
-{/each}
-</table>
-</div>
+<Table guesses={guesses} properties={properties}/>
 <form method="POST">
 <input name="guess">
 <input type="submit" value="Guess">
