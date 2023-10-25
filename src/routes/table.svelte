@@ -26,7 +26,7 @@ table {
 {/each}
 </tr>
 {#each guesses as guess}
-<Guess guess={guess} properties={properties}/>
+{#if guess}<Guess guess={guess} properties={properties}/>{/if}
 {/each}
 </table>
 </div>
