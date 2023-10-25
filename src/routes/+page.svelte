@@ -2,9 +2,9 @@
 import Guess from './guess.svelte'
 export let data;
 export let form;
-let guesses = form?.guesses || data.guesses;
+let guesses = form?.guesses || [];
 console.log(guesses)
-let properties = form?.properties || data.properties;
+let properties = data.properties;
 let answer = data.answer || {}
 </script>
 

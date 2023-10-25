@@ -26,6 +26,6 @@ export const actions = {
 		const data = await request.formData()
 		const Name = data.get("guess")
 		guesses.push({Name})
-		return {success: true, valid: false, guesses, properties}
+		return {success: true, valid: false, guesses}
 	}
 }
