@@ -21,3 +21,9 @@ export async function getBacteria(properties) {
         }
         return bacteria;
 }
+export async function query(Name, bacteria) {
+    for (let species of bacteria) {
+        if (Name == species.Name) return species;
+    }
+    return false;
+}
