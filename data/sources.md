@@ -1,0 +1,1 @@
+Information on bacteria species found in `microbes.csv` is from [BacDive](https://bacdive.dsmz.de/).
