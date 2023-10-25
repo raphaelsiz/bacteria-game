@@ -1,5 +1,5 @@
 <script>
-import Guess from './guess.svelte'
+import Table from './table.svelte'
 export let data;
 export let form;
 let guesses = form?.guesses || [];
