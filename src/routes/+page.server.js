@@ -1,5 +1,5 @@
 import csv from 'csvtojson';
-import { getNumber, getBacteria, query } from "$lib/utils";
+import { getNumber, getBacteria, query, toGuess } from "$lib/utils";
 
 let guesses = [];
 let properties = ["Name","Indole","Urease"];
@@ -26,12 +26,12 @@ export const actions = {
 		const data = await request.formData()
 		const Name = data.get("guess")
 		if (answer.Name == Name) {
-			guesses.push(answer)
+			guesses.push(toGuess(answer,answer))
 			return {success: true, valid: true, correct: true, guesses}
 		}
 		let guess = query(Name,bacteria);
 		if (!guess) return {success: true, valid: false, guesses}
-		guesses.push(guess)
+		guesses.push(toGuess(guess,answer))
 		return {success: true, valid: true, correct: false, guesses}
 	}
 }

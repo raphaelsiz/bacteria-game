@@ -27,3 +27,12 @@ export function query(Name, bacteria) {
     }
     return false;
 }
+export function toGuess(guess,answer) {
+    let newGuess = {}
+    for (let property of guess) {
+        let correct = "incorrect";
+        if (guess[property] == answer[property]) correct = "correct";
+        else if (guess[property] == "either" || answer[property] == "either") correct = "somewhat";
+        newGuess[property] = {answer: guess[property], correct}
+    }
+}

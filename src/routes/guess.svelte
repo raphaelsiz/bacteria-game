@@ -7,10 +7,19 @@ export let properties;
 tr, td {
     border: 1px solid black;
 }
+.correct {
+    background-color: green
+}
+.incorrect {
+    background-color: red
+}
+.somewhat {
+    background-color: yellow
+}
 </style>
 
 <tr>
     {#each properties as property}
-    <td>{guess[property] || ""}</td>
+    <td class={guess[property]?.correct}>{guess[property]?.answer || ""}</td>
     {/each}
 </tr>
