@@ -18,7 +18,7 @@ export function load({ params }) {
             Shape: "",
             "Aerobic needs": ""
 		},
-		guesses, properties
+		properties
 	};
 }
 export const actions = {
