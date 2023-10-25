@@ -39,7 +39,7 @@ export function toGuess(guess,answer) {
     if (guess.Name == answer.Name) correct = "correct";
     else {
         let name = guess.Name.split(' ');
-        for (let prop in name) if (answer.Name.contains(prop)) correct = "somewhat"
+        for (let prop of name) if (answer.Name.includes(prop)) correct = "somewhat"
     }
     newGuess.Name = {answer: guess.Name, correct}
     
