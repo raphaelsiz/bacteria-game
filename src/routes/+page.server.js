@@ -25,6 +25,10 @@ export const actions = {
 	default: async function ({request}) {
 		const data = await request.formData()
 		const Name = data.get("guess")
+		if (answer.Name == Name) {
+			guesses.push(answer)
+			return {success: true, valid: true, correct: true, guesses}
+		}
 		guesses.push({Name})
 		return {success: true, valid: false, guesses}
 	}
