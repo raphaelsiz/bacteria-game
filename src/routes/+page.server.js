@@ -1,7 +1,7 @@
 import csv from 'csvtojson';
 import { getNumber, getBacteria, query, toGuess } from "$lib/utils";
 
-let properties = ["Name","Indole","Urease"];
+let properties = ["Name","Indole","Urease","D-glucose","D-mannitol","Lactose","Sucrose","Maltose","Salacin","Gelatinase","Glycerol"];
 let bacteria;
 let answer;
 getBacteria(properties).then(b=>{
