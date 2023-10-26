@@ -21,9 +21,9 @@ export function load({}) {
 	};
 }
 export const actions = {
-	default: async function ({request,cookies}) {
-		let guesses = cookies.get('guesses') ? JSON.parse(cookies.get('guesses')) : [];
+	default: async function ({request}) {
 		const data = await request.formData()
+		let guesses = JSON.parse(data.get("guesses"));
 		const Name = data.get("guess")
 		if (answer.Name.toLowerCase() == Name.toLowerCase()) {
 			guesses.push(toGuess(answer,answer))
@@ -32,7 +32,6 @@ export const actions = {
 		let guess = query(Name,bacteria);
 		if (!guess) return {success: true, valid: false, guesses}
 		guesses.push(toGuess(guess,answer))
-		cookies.set('guesses',JSON.stringify(guesses))
 		return {success: true, valid: true, correct: false, guesses}
 	}
 }

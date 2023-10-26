@@ -28,6 +28,7 @@
     <Table guesses={guesses} properties={properties}/>
     <form method="POST">
         <input name="guess">
+        <input type="hidden" name="guesses" value={JSON.stringify(guesses)}>
         <input type="submit" value="Guess">
     </form>
     {#if form?.valid == false}
