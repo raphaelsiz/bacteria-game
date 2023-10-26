@@ -33,4 +33,7 @@
     {#if form?.valid == false}
         <p class="err">Sorry, that species hasn't been documented yet. You can request your favorites <a href="https://github.com/raphaelSiz/bacteria-game/issues">here</a> or <a href="https://github.com/raphaelSiz/bacteria-game/CONTRIBUTING.md">create a pull request</a> with your edits!</p>
     {/if}
+    {#if form?.correct}
+        <p>Good job! You guessed correctly!</p>
+    {/if}
 </div>
