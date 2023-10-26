@@ -5,7 +5,6 @@
     let guesses = form?.guesses || [];
     console.log(guesses)
     let properties = data.properties;
-    let answer = data.answer || {}
 </script>
 
 <style>

@@ -12,11 +12,6 @@ getBacteria(properties).then(b=>{
 
 export function load({}) {
 	return {
-		answer: {
-			Name: "",
-            Shape: "",
-            "Aerobic needs": ""
-		},
 		properties
 	};
 }
