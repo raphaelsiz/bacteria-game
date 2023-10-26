@@ -10,11 +10,13 @@
     }
     table {
         border-collapse: collapse;
-        margin: auto;
     }
     .table {
-        border-radius: 5%;
+        border: 2px solid black;
+        border-radius: 7px;
         overflow: hidden;
+        margin: auto;
+        width: fit-content;
     }
 </style>
 
