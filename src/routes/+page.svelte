@@ -9,17 +9,18 @@
 </script>
 
 <style>
-    form
-    {
+    form {
         display: inline-block;
         margin-left: auto;
         margin-right: auto;
         text-align: left;
     }
-    div.container
-    {
+    div.container {
         display: block;
         text-align: center;
+    }
+    .err {
+        color: red;
     }
 </style>
 
