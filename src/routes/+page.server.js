@@ -7,7 +7,6 @@ let answer;
 getBacteria(properties).then(b=>{
 	bacteria = b || [null];
 	answer = bacteria[getNumber(bacteria.length)]
-	console.log(answer)
 });
 
 export function load({}) {

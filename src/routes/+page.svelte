@@ -3,7 +3,6 @@
     export let data;
     export let form;
     let guesses = form?.guesses || [];
-    console.log(guesses)
     let properties = data.properties;
 </script>
 
