@@ -1,7 +1,6 @@
 import csv from 'csvtojson';
 import { getNumber, getBacteria, query, toGuess } from "$lib/utils";
 
-let guesses = [];
 let properties = ["Name","Indole","Urease"];
 let bacteria;
 let answer;
@@ -11,7 +10,7 @@ getBacteria(properties).then(b=>{
 	console.log(answer)
 });
 
-export function load({ params }) {
+export function load({}) {
 	return {
 		answer: {
 			Name: "",
@@ -22,7 +21,8 @@ export function load({ params }) {
 	};
 }
 export const actions = {
-	default: async function ({request}) {
+	default: async function ({request,cookies}) {
+		let guesses = cookies.get('guesses') ? JSON.parse(cookies.get('guesses')) : [];
 		const data = await request.formData()
 		const Name = data.get("guess")
 		if (answer.Name == Name) {
@@ -32,6 +32,7 @@ export const actions = {
 		let guess = query(Name,bacteria);
 		if (!guess) return {success: true, valid: false, guesses}
 		guesses.push(toGuess(guess,answer))
+		cookies.set('guesses',JSON.stringify(guesses))
 		return {success: true, valid: true, correct: false, guesses}
 	}
 }
