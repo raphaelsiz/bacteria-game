@@ -12,8 +12,9 @@
         border-collapse: collapse;
         margin: auto;
     }
-    table {
+    .table {
         border-radius: 5%;
+        overflow: hidden;
     }
 </style>
 
