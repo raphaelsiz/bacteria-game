@@ -23,7 +23,7 @@ export async function getBacteria(properties) {
 }
 export function query(Name, bacteria) {
     for (let species of bacteria) {
-        if (Name == species.Name) return species;
+        if (Name.toLowerCase() == species.Name.toLowerCase()) return species;
     }
     return false;
 }
@@ -31,15 +31,15 @@ export function toGuess(guess,answer) {
     let newGuess = {}
     for (let property in guess) if (property != "Name") {
         let correct = "incorrect";
-        if (guess[property] == answer[property]) correct = "correct";
+        if (guess[property].toLowerCase() == answer[property].toLowerCase()) correct = "correct";
         else if (guess[property] == "either" || answer[property] == "either") correct = "somewhat";
         newGuess[property] = {answer: guess[property], correct}
     }
     let correct = "incorrect";
-    if (guess.Name == answer.Name) correct = "correct";
+    if (guess.Name.toLowerCase() == answer.Name.toLowerCase()) correct = "correct";
     else {
         let name = guess.Name.split(' ');
-        for (let prop of name) if (answer.Name.includes(prop)) correct = "somewhat"
+        for (let prop of name) if (answer.Name.toLowerCase().includes(prop.toLowerCase())) correct = "somewhat"
     }
     newGuess.Name = {answer: guess.Name, correct}
     

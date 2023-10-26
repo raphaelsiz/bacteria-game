@@ -25,7 +25,7 @@ export const actions = {
 		let guesses = cookies.get('guesses') ? JSON.parse(cookies.get('guesses')) : [];
 		const data = await request.formData()
 		const Name = data.get("guess")
-		if (answer.Name == Name) {
+		if (answer.Name.toLowerCase() == Name.toLowerCase()) {
 			guesses.push(toGuess(answer,answer))
 			return {success: true, valid: true, correct: true, guesses}
 		}
