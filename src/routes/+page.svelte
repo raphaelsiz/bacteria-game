@@ -7,11 +7,19 @@
 </script>
 
 <style>
+    :global(html) {
+        height: 100%;
+        background-color: #ddd
+    }
     form {
         display: inline-block;
         margin-left: auto;
         margin-right: auto;
         text-align: left;
+        font-size: 24px;
+    }
+    input {
+        font-size: 24px
     }
     div.container {
         display: block;

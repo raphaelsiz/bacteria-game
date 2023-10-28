@@ -1,25 +1,37 @@
 <script>
     export let guess;
     export let properties;
+    function switchVal(val) {
+        switch (val) {
+            case "TRUE":
+            case "true":
+                return "+";
+                break;
+            case "FALSE":
+            case "FALSE":
+                return "-"
+                break;
+            default:
+                return val;
+        }
+    }
 </script>
 
 <style>
-    tr, td {
-        border: 1px solid black;
-    }
     .correct {
-        background-color: green
+        background-color: #1e6b13
     }
     .incorrect {
-        background-color: red
+        background-color: #962317
     }
     .somewhat {
-        background-color: yellow
+        background-color: #ebc934;
+        color: black
     }
 </style>
 
-<tr>
+<tr class={($$restProps.class || '')}>
     {#each properties as property}
-        <td class={guess[property]?.correct}>{guess[property]?.answer || ""}</td>
+        <td class="{guess[property]?.correct} {($$restProps.class || '')}">{switchVal(guess[property]?.answer || "")}</td>
     {/each}
 </tr>

@@ -5,11 +5,19 @@
 </script>
 
 <style>
-    table, tr, th {
+    table, tr, .table :global(.testing) {
         border: 1px solid black;
     }
     table {
         border-collapse: collapse;
+        background-color: #333;
+        color: #eee;
+        font-size: 24px
+    }
+    th {
+        border: 1px solid #ddd;
+        padding-left: 10px;
+        padding-right: 10px
     }
     .table {
         border: 2px solid black;
@@ -18,6 +26,7 @@
         margin: auto;
         width: fit-content;
     }
+
 </style>
 
 
@@ -25,11 +34,11 @@
     <table>
         <tr>
             {#each properties as property}
-                <th>{property}</th>
+                <th class="{$$restProps.class || ''}">{property}</th>
             {/each}
         </tr>
         {#each guesses as guess}
-            {#if guess}<Guess guess={guess} properties={properties}/>{/if}
+            {#if guess}<Guess class="testing" guess={guess} properties={properties}/>{/if}
         {/each}
     </table>
 </div>
